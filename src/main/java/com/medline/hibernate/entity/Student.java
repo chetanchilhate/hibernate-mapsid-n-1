@@ -36,7 +36,7 @@ public class Student {
 		this.name = name;
 	}
 
-	@OneToMany(mappedBy = "student",  fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "student",  fetch = FetchType.LAZY)
 	public Set<BasicSubject> getBasicSubject() {
 		return basicSubject;
 	}
