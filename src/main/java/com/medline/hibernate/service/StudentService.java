@@ -22,7 +22,7 @@ public class StudentService {
 	
 	public List<StudentBasicSubjects> getStudentBasicSubjects() {
 		return repo
-			.findAll()	
+			.findAllStudents()	
 			.stream()
 			.map(this::toStudentBasicSubjects)
 			.collect(Collectors.toList());
