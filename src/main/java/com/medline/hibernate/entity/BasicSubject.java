@@ -1,11 +1,9 @@
 package com.medline.hibernate.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +13,6 @@ public class BasicSubject {
 	private Long id;
 	private String name;
 	private Student student;
-	private AlternateSubject alternateSubject;
 
 	public BasicSubject() {
 		// for hibernate
@@ -46,16 +43,6 @@ public class BasicSubject {
 
 	public void setStudent(Student student) {
 		this.student = student;
-	}
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id")
-	public AlternateSubject getAlternateSubject() {
-		return alternateSubject;
-	}
-
-	public void setAlternateSubject(AlternateSubject alternateSubject) {
-		this.alternateSubject = alternateSubject;
 	}
 
 }
