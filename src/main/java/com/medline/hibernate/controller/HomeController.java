@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.medline.hibernate.dto.StudentBasicSubjects;
+import com.medline.hibernate.dto.StudentSubjects;
 import com.medline.hibernate.service.StudentService;
 
 @RestController
@@ -22,7 +22,7 @@ public class HomeController {
 	}
 
 	@GetMapping("/students")
-	public List<StudentBasicSubjects> getAllStudents() {
-		return service.getStudentBasicSubjects();
+	public List<StudentSubjects> getAllStudents() {
+		return service.getStudentAllSubjects();
 	}
 }
