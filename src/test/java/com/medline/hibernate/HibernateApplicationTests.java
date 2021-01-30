@@ -1,5 +1,6 @@
 package com.medline.hibernate;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
