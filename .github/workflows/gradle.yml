@@ -13,6 +13,23 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    services:
+      mysql-master: 
+        image: mysql:5.7
+        ports: 
+          - 3306/tcp
+        env: 
+          MYSQL_DATABASE: test
+          MYSQL_USER: root
+          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: root
+        options: >-
+          --name=mysql-master
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3   
 
     steps:
     - uses: actions/checkout@v2
